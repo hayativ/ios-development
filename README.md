@@ -1,6 +1,6 @@
 Assignment 3 - Shopping Cart
    - Why did you choose class for ShoppingCart?
-  The shopping cart (ShoppingCart) was chosen as a class because it needs to have an identity 
+  ShoppingCart was chosen as a class because it needs to have an identity 
   and a shared state that can be modified and accessed from different parts of the program. 
   When the shopping cart is passed to a function, we want changes in that function to affect the original shopping cart. 
   For example, when adding a new item in the modifyCart(_:) function, the original shopping cart is actually changed because classes are reference types.
