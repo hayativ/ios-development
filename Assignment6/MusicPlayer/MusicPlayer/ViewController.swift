@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class MusicPlayerViewController: UIViewController {
+class ViewController: UIViewController {
     
     private var tracks: [Track] = [
         Track(title: "Track 1", fileName: "1.mp3", coverName: "1"),
@@ -22,7 +22,7 @@ class MusicPlayerViewController: UIViewController {
     private var audioPlayer: AVAudioPlayer?
     private var isPlaying = false
     
-    // MARK: - UI Elements
+    // UI Elements
     private let coverImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -43,7 +43,7 @@ class MusicPlayerViewController: UIViewController {
     private let playPauseButton = UIButton(type: .system)
     private let nextButton = UIButton(type: .system)
     
-    // MARK: - Lifecycle
+    // Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -51,7 +51,7 @@ class MusicPlayerViewController: UIViewController {
         loadTrack(index: currentIndex)
     }
     
-    // MARK: - Setup
+    // Setup
     private func setupLayout() {
         // Configure buttons
         prevButton.setImage(UIImage(systemName: "backward.fill"), for: .normal)
@@ -87,7 +87,7 @@ class MusicPlayerViewController: UIViewController {
         ])
     }
     
-    // MARK: - Actions
+    // Actions
     @objc private func buttonTapped(_ sender: UIButton) {
         switch sender {
         case prevButton:
@@ -101,7 +101,7 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
-    // MARK: - Player Logic
+    // Player Logic
     private func loadTrack(index: Int) {
         guard tracks.indices.contains(index) else { return }
         let track = tracks[index]
